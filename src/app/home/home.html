@@ -1,0 +1,27 @@
+<div class="padding"></div>
+<h3>Employee table - Total number of hours worked this month</h3>
+<div class="row">
+  <table>
+    <tr class="tableHeader">
+      <th>Name</th>
+      <th>Total Time in Month</th>
+    </tr>
+
+
+    @for (em of employee(); track $index) {
+    @if (em.NumHours<100) { <tr class="lessThan100">
+      <td>{{em.EmployeeName}}</td>
+      <td>{{em.NumHours}} hrs</td>
+      </tr>
+      }@else {
+      <tr>
+        <td>{{em.EmployeeName}}</td>
+        <td>{{em.NumHours}} hrs</td>
+      </tr>
+      }
+
+
+      }
+  </table>
+
+</div>
