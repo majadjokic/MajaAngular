@@ -31,21 +31,19 @@ export class Home implements OnInit{
         var st=new Date(em.StarTimeUtc).getTime();
         var milS=ed-st;
         var hours=milS/ (1000 * 60 * 60);
-        var hoursR=Math.round(hours);
 
-        if(hoursR<0){
+        if(hours<0){
           milS=st-ed;
         hours=milS/ (1000 * 60 * 60);
-        hoursR=Math.round(hours);
         employees2.push({
           EmployeeName: em.EmployeeName,
-          NumHours: hoursR
+          NumHours: hours
         })
         }else{
 
         employees2.push({
           EmployeeName: em.EmployeeName,
-          NumHours: hoursR
+          NumHours: hours
         })
         }
         
@@ -77,6 +75,11 @@ export class Home implements OnInit{
             }
           });
         });
+
+        employees3.forEach(em3=>{
+          em3.NumHours=Math.round(em3.NumHours)
+        })
+        
 
         var objIndex = employees3.findIndex(obj => obj.EmployeeName == null);
 
