@@ -65,18 +65,7 @@ export class Home implements OnInit{
             EmployeeName:ue,
             NumHours:0
           })
-          // if(ue==null){
-          // employees3.push({
-          //   EmployeeName:"Unknown",
-          //   NumHours:0
-          // })
-          // }else{
-          //   employees3.push({
-          //   EmployeeName:ue,
-          //   NumHours:0
-          // })
           
-          //}
         });
 
 
