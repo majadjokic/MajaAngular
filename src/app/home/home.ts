@@ -61,13 +61,25 @@ export class Home implements OnInit{
         });
         var uniqueArray = [...new Set(allEmployees)];
         uniqueArray.forEach(ue => {
-          if(ue!=null){
-          employees3.push({
+            employees3.push({
             EmployeeName:ue,
             NumHours:0
           })
-          }
+          // if(ue==null){
+          // employees3.push({
+          //   EmployeeName:"Unknown",
+          //   NumHours:0
+          // })
+          // }else{
+          //   employees3.push({
+          //   EmployeeName:ue,
+          //   NumHours:0
+          // })
+          
+          //}
         });
+
+
         employees2.forEach(em2 => {
           employees3.forEach(em3 => {
             if(em2.EmployeeName==em3.EmployeeName){
@@ -76,6 +88,12 @@ export class Home implements OnInit{
             }
           });
         });
+
+        var objIndex = employees3.findIndex(obj => obj.EmployeeName == null);
+
+        employees3[objIndex].EmployeeName="Unknown";
+
+
         
 
 for (let i = 0; i < employees3.length; i++) {
@@ -115,8 +133,8 @@ for (let i = 0; i < employees3.length; i++) {
         labels: labels,
         datasets: [{
           data: percentageData,
-          backgroundColor: ["#409ff2","#6895c7","#99a9d0","#9f94a1","#dbacaa","#b58f79","#e0ce8b","#909c67","#b5eb78","#69ca31"],
-          hoverBackgroundColor: ["#409ff2","#6895c7","#99a9d0","#9f94a1","#dbacaa","#b58f79","#e0ce8b","#909c67","#b5eb78","#69ca31"]
+          backgroundColor: ["#409ff2","#6895c7","#99a9d0","#9f94a1","#dbacaa","#b58f79","#e0ce8b","#909c67","#b5eb78","#69ca31","#c2c2c2"],
+          hoverBackgroundColor: ["#409ff2","#6895c7","#99a9d0","#9f94a1","#dbacaa","#b58f79","#e0ce8b","#909c67","#b5eb78","#69ca31","#c2c2c2"]
         }]
       },
       options: {
